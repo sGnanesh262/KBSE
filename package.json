@@ -1,0 +1,30 @@
+{
+  "name": "knowledge-base-search-engine",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"node server/index.js\" \"vite\"",
+    "dev:server": "node server/index.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "@google/genai": "^1.24.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "9",
+    "remark-gfm": "4",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
