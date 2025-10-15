@@ -5,7 +5,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 
-dotenv.config(); // loads .env, .env.local etc from project root
+// Load .env first then .env.local so local overrides apply. dotenv by default
+// only loads a file named .env, so explicitly load .env.local used by this repo.
+const envPath = path.resolve(process.cwd(), '.env');
+const envLocalPath = path.resolve(process.cwd(), '.env.local');
+dotenv.config({ path: envPath });
+dotenv.config({ path: envLocalPath });
 
 import fs from 'fs';
 
